@@ -64,7 +64,7 @@ for word, count in top_words:
     markdown_table += f"| {rank} | {word} | {count} | {percentage:.2f}% | {cumulative_percentage:.2f}% | {definition} | {translation} |\n"
     rank += 1
 
-print(f"source: [google sheets](https://docs.google.com/spreadsheets/d/{YOUR_SHEET_ID})")
+print(f"source: [google sheets](https://docs.google.com/spreadsheets/d/{YOUR_SHEET_ID})  ")
 print(
     f"to build, run [build_table workflow](https://github.com/Yarden-zamir/word-freq-for-rubin/actions/workflows/build_table.yml)"
 )
