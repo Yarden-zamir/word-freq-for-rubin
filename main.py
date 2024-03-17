@@ -64,6 +64,7 @@ for word, count in top_words:
     markdown_table += f"| {rank} | {word} | {count} | {percentage:.2f}% | {cumulative_percentage:.2f}% | {definition} | {translation} |\n"
     rank += 1
 
+print(f"source: [google sheets](https://docs.google.com/spreadsheets/d/{YOUR_SHEET_ID})")
 print(markdown_table)
 print(
     "<br>".join(
