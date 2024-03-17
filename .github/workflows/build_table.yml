@@ -1,1 +1,25 @@
+on:
+    workflow_dispatch: {}
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        env:
+            SHEET_ID: ${{ vars.SHEET_ID }}
+        steps:
+            - uses: actions/checkout@v4.1.1
+            - uses: actions/setup-python@v5.0.0
+              with:
+                  python-version: 3.12
+            - run: pip install -r requirements.txt
+            - run: python main.py
+            # - name: Push results as readme
 
+            - name: Commit files
+              run: |
+                git config --local user.email "github-actions[bot]@users.noreply.github.com"
+                git config --local user.name "github-actions[bot]"
+                git commit -a -m "Build and push table to README.md"
+            - name: Push changes
+              uses: ad-m/github-push-action@master
+              with:
+                branch: ${{ github.ref }}
