@@ -25,7 +25,7 @@ blacklist_words_column = data[
 ]  # a list of words we don't want
 
 blacklist_words_list = blacklist_words_column.to_list()
-    
+
 word_counts = Counter()
 nltk.download("stopwords")
 
@@ -65,6 +65,9 @@ for word, count in top_words:
     rank += 1
 
 print(f"source: [google sheets](https://docs.google.com/spreadsheets/d/{YOUR_SHEET_ID})")
+print(
+    f"to build, run [build_table workflow](https://github.com/Yarden-zamir/word-freq-for-rubin/actions/workflows/build_table.yml)"
+)
 print(markdown_table)
 print(
     "<br>".join(
