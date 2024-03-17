@@ -23,7 +23,10 @@ data_sources_column = data[
 blacklist_words_column = data[
     "blacklist words"
 ]  # a list of words we don't want
-blacklist_words_list = blacklist_words_column.str.lower().str.split("\n")
+blacklist_words_list = []
+for words in blacklist_words_column:
+    blacklist_words_list += words.split("\n")
+    
 word_counts = Counter()
 nltk.download("stopwords")
 
