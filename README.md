@@ -1,4 +1,4 @@
-source: [google sheets](https://docs.google.com/spreadsheets/d/1FR4i_LPpCtTTkfTxONs4ZsPtpG1yEOAQxXsUJYmGLhY)
+source: [google sheets](https://docs.google.com/spreadsheets/d/1FR4i_LPpCtTTkfTxONs4ZsPtpG1yEOAQxXsUJYmGLhY)  
 to build, run [build_table workflow](https://github.com/Yarden-zamir/word-freq-for-rubin/actions/workflows/build_table.yml)
 | Rank | Word | Count | Percentage | Cumulative Percentage | Definition | Translation |
 |------|------|-------|------------|-----------------------|------------|-------------|
