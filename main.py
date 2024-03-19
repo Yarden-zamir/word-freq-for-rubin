@@ -30,7 +30,7 @@ nltk.download("stopwords")
 for data_source in data_sources_column:
     data_source = str(data_source).lower()
     for line in data_source.split("\n"):  # iterates through every line
-        words: list[str] = line.replace(" ", " ").split(" ")
+        words: list[str] = line.replace(" ", " ").replace("\r","").split(" ")
         words = [
             word.removesuffix(".")
             .removesuffix("?")
@@ -50,7 +50,7 @@ for data_source in data_sources_column:
             and word not in blacklist_words_list
             and word.removesuffix("s") not in blacklist_words_list
             and word.removesuffix("s") not in stopwords.words("english")
-            and word not in ["", " ", "  ", "nan", "\r", "/"]
+            and word not in ["", " ", "  ", "nan", "/"]
             and not word.isnumeric()
         ]
         word_counts.update(words)
@@ -90,3 +90,4 @@ print(
         ]
     )
 )
+print(top_words[:20])
