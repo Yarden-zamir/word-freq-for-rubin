@@ -31,8 +31,8 @@ nltk.download("stopwords")
 
 for data_source in data_sources_column:
     data_source = str(data_source).lower()
-    for line in data_source.split("\n"):
-        words: list[str] = re.findall(r"\b\w+\b", line.lower())
+    for line in data_source.split("\n"):  # itirates through every line
+        words: list[str] = line.split(" ")
         words = [
             word
             for word in words
@@ -41,7 +41,7 @@ for data_source in data_sources_column:
             and word.removesuffix("s") not in blacklist_words_list
             and word.removesuffix("s") not in stopwords.words("english")
             and word not in ["", " ", "  ", "nan"]
-            and not word.isdigit()
+            and not word.removesuffix('.').isdigit()
         ]
         word_counts.update(words)
 # Get the most common words and their counts
