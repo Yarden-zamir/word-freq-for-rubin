@@ -1,5 +1,6 @@
 on:
     workflow_dispatch: {}
+name: Build word frequency table
 jobs:
     build:
         runs-on: ubuntu-latest
