@@ -90,4 +90,3 @@ print(
         ]
     )
 )
-print(top_words[:10])
