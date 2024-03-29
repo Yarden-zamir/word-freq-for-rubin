@@ -37,10 +37,7 @@ for data_source in data_sources_column:
             .removesuffix("!")
             .removesuffix(",")
             .replace("\n", "")
-            # .replace(";", "")
-            # .replace("$", "")
-            # .replace("€", "")
-            # .replace("%", "")
+            .removesuffix("s")
             for word in words
         ]
         words = [
