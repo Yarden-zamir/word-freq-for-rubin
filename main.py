@@ -66,9 +66,9 @@ markdown_table += "|------|------|-------|------------|-----------------------|-
 cumulative_percentage = 0
 rank = 1
 for word, count in top_words:
-    definition = f"[{word}](https://www.dictionary.com/browse/{word})"
+    definition = f"[definition](https://www.dictionary.com/browse/{word})"
 
-    translation = f"[{word}](https://translate.google.com/?hl=iw&sl=auto&tl=iw&text={word}&op=translate)"
+    translation = f"[translation](https://translate.google.com/?hl=iw&sl=auto&tl=iw&text={word}&op=translate)"
     percentage = (count / total_words) * 100
     cumulative_percentage += percentage
     markdown_table += f"| {rank} | {word} | {count} | {percentage:.2f}% | {cumulative_percentage:.2f}% | {definition} | {translation} |\n"
