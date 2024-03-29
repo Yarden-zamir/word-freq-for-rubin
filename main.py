@@ -50,7 +50,7 @@ for data_source in data_sources_column:
             and word not in blacklist_words_list
             and word.removesuffix("s") not in blacklist_words_list
             and word.removesuffix("s") not in stopwords.words("english")
-            and word not in ["", " ", "  ", "nan", "/","=","+","-"]
+            and word not in ["", " ", "  ", "nan", "/","=","+","-","–"}
             and not word.isnumeric()
         ]
         word_counts.update(words)
